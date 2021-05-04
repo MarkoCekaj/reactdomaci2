@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { questions } from "./components/questions/questions";
 import Confetti from "react-confetti";
 function App() {
-  // const [firstQuestion, setFirstQuestion] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
@@ -18,19 +17,12 @@ function App() {
       setShowScore(true);
     }
   };
-  const goBack = () => {
-    const questionOne = currentQuestion + 1;
-    if (questions.length === 20) {
-      setCurrentQuestion(questionOne);
-    }
-  };
   return (
     <div className="App">
       {showScore ? (
         <div id="scoreSection">
           <Confetti />
           Points: {score} out of {questions.length}
-          <button onClick={() => goBack()}>Go back</button>
         </div>
       ) : (
         <>
